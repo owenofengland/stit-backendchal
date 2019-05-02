@@ -44,7 +44,7 @@ def home():
 def register():
     if request.method == "POST":
         username = request.form['username']
-        password = hashlib.sha256((request.form['password']).encode("utf-8"))
+        #password = hashlib.sha256((request.form['password']).encode("utf-8"))
         password = request.form['password']
         category = request.form['category']
         genre = request.form['genre']
@@ -64,7 +64,7 @@ def register():
 def login():
     if request.method == "POST":
         username = request.form['username']
-        password = hashlib.sha256((request.form['password']).encode("utf-8"))
+        #password = hashlib.sha256((request.form['password']).encode("utf-8"))
         password = request.form['password']
         exist = False
         for i in userlist.find({'username':username}):
