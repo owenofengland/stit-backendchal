@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    {% if username %}
+      <div>
+        <div style="float: left">
+          <a href="/">Home</a>
+          <a href="/preferences">Preferences</a>
+          <a href="/getEvents">Events</a>
+        </div>
+      </div>
+    {% else %}
+      <div>
+          <div style="float: right">
+            <a href="/">Home</a>
+          </div>
+      </div>
+    {% endif %}
+      <div>
+        <br>
+        <center>Register</center>
+
+        {% if message %}
+          <div>
+            <div class="error"><center>{{ message }}</center></div>
+          </div>
+
+        {% endif %}
+          <form action="register" method="POST">
+            <div><center><label for="username">Username:</label><input name="username" type="text" value=""/></center></div>
+            <div><center><label for="password">Password:</label><input name="password" type="password" value=""/></center></div>
+            <div><center><label for="category">Category:</label><input name="category" type="text" value=""/></center></div>
+            <div><center><label for="genre">Genre:</label><input name="genre" type="text" value=""/></center></div>
+            <div><center><input type="submit" value="Register"/></center></div>
+          </form>
+      </div>
+  </body>
+</html>

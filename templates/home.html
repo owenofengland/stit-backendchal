@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		{% if username %}
+      <div>
+  			<div style="float: left">
+  				<a href="/preferences">Change preferences</a>
+  				<a href="/getEvents">Events</a>
+  			</div>
+  			<div style="float: right"> Logged in as {{ username }} </div>
+        <div>
+          <a href="/logout">logout</a>
+        </div>
+      </div>
+		{% else %}
+      <div>
+  			<div style="float: left">
+  				<a href="/login">login</a>
+  				<a href="/register">register</a>
+  			</div>
+  			<div style="float: right"> Welcome</div>
+      </div>
+		{% endif %}
+			<div>Events Explorer</div>
+		{% if message %}
+      <div>
+			     <div class="error"><center>{{message}}</center></div>
+      </div>
+		{% endif %}
+	</body>
+</html>

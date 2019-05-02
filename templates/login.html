@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    {% if username %}
+      <div>
+        <div style="float: left"><a href="/">Home</a></div>
+        <div style="float: right">Logged in</div>
+      </div>
+    {% else %}
+      <div>
+        <div style="float: left"><a href="/">Home</a><a href="/register">Register</a></div>
+      </div>
+    {% endif %}
+
+    <br>
+
+    <center>Log in</center>
+
+    {% if message %}
+    <div>
+      <div class="error"><center>{{ message }}</center></div>
+    </div>
+
+    {% endif %}
+
+    <form action="login" method="POST">
+      <div><center><label for="username">Username:</label><input name="username" type="text" value =""/></center></div>
+      <br>
+      <div><center><label for="password">Password:</label><input name="password" type="password" value=""/></center></div>
+      <br>
+      <div><center><input type="submit" value="login"/></center></div>
+    </form>
+  </body>
+</html>
