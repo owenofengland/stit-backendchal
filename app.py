@@ -66,7 +66,7 @@ def login():
         username = request.form['username']
         #password = hashlib.sha256((request.form['password']).encode("utf-8"))
         password = request.form['password']
-        exist = False
+        exists = False
         for i in userlist.find({'username':username}):
             exists = True
         if exists:
@@ -122,4 +122,4 @@ def logout():
 
 
 if __name__  == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)

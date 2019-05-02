@@ -5,10 +5,13 @@
       <div>
   			<div style="float: left">
   				<a href="/preferences">Change preferences</a>
+					<br>
   				<a href="/getEvents">Events</a>
+					<br>
   			</div>
   			<div style="float: right"> Logged in as {{ username }} </div>
-        <div>
+				<br>
+        <div style="float: right">
           <a href="/logout">logout</a>
         </div>
       </div>
@@ -21,7 +24,7 @@
   			<div style="float: right"> Welcome</div>
       </div>
 		{% endif %}
-			<div>Events Explorer</div>
+			<center><div>Events Explorer</div></center>
 		{% if message %}
       <div>
 			     <div class="error"><center>{{message}}</center></div>
