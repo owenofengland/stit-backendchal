@@ -17,7 +17,8 @@ userlist = db["users"]
 categoryList = ["Arts & Theatre", "Film", "Miscellaneous", "Music", "Sports", "Undefined", "Donation", "Event Style", "Group", "Individual", "Merchandise", "Nonticket", "Parking", "Transportation", "Upsell", "Venue Based"]
 
 genreId = {'R&B': 'KnvZfZ7vAee',
-'Hip-Hop/Rap': 'KnvZfZ7vAv1',
+'Hip-Hop': 'KnvZfZ7vAv1',
+'Rap': 'KnvZfZ7vAv1',
 'Comedy': 'KnvZfZ7vAe1',
 'Classical': 'KnvZfZ7v7nJ',
 'Jazz': 'KnvZfZ7vAvE',
@@ -89,6 +90,7 @@ def getEvents():
     if 'username' not in session:
         return render_template("home.html", message = "You must be logged in to do this")
     else:
+        print(session["username"])
         username = session['username']
         user = userlist.find_one({"username":username})
         category = user['category']
@@ -107,6 +109,7 @@ def setPreferences():
     if 'username' not in session:
         return render_template("home.html", message = "You must be logged in to view Preferences")
     else:
+        print(session["username"])
         if request.method == "POST":
             username = session['username']
             category = request.form['category']
