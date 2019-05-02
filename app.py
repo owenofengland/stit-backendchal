@@ -103,8 +103,9 @@ def getEvents():
 
 @app.route('/preferences', methods=['GET', 'POST'])
 def setPreferences():
+
     if 'username' not in session:
-        return render_template("home.html", message = "You must be logged in to view stats")
+        return render_template("home.html", message = "You must be logged in to view Preferences")
     else:
         if request.method == "POST":
             username = session['username']
